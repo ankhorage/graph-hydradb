@@ -1,0 +1,13 @@
+graph LR
+  module_examples_basic_usage_index_ts["examples/basic-usage/index.ts"]
+  module_paradox_config_ts["paradox.config.ts"]
+  module_src_features_graphPersistence_adapters_hydraHttp_ts["src/features/graphPersistence/adapters/hydraHttp.ts"]
+  module_src_features_graphPersistence_composition_createHydraDbGraphPersistence_ts["src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"]
+  module_src_graphHydraDb_test_ts["src/graphHydraDb.test.ts"]
+  module_src_graphHydraDb_ts["src/graphHydraDb.ts"]
+  module_src_types_config_ts["src/types/config.ts"]
+  export_createHydraDbGraphPersistence["createHydraDbGraphPersistence"]
+  module_src_features_graphPersistence_composition_createHydraDbGraphPersistence_ts --> export_createHydraDbGraphPersistence
+  export_createHydraDbGraphPersistence -.-> export_HydraDbGraphPersistenceConfiguration
+  export_HydraDbGraphPersistenceConfiguration["HydraDbGraphPersistenceConfiguration"]
+  module_src_types_config_ts --> export_HydraDbGraphPersistenceConfiguration

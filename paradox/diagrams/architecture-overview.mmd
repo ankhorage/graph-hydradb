@@ -1,0 +1,22 @@
+graph TD
+  package__ankhorage_graph_hydradb["@ankhorage/graph-hydradb"]
+  entrypoint_src_graphHydraDb_ts["src/graphHydraDb.ts"]
+  package__ankhorage_graph_hydradb --> entrypoint_src_graphHydraDb_ts
+  module_examples_basic_usage_index_ts["examples/basic-usage/index.ts"]
+  package__ankhorage_graph_hydradb -.-> module_examples_basic_usage_index_ts
+  module_examples_basic_usage_index_ts --> module_dist_graphHydraDb_d_ts
+  module_paradox_config_ts["paradox.config.ts"]
+  package__ankhorage_graph_hydradb -.-> module_paradox_config_ts
+  module_src_features_graphPersistence_adapters_hydraHttp_ts["src/features/graphPersistence/adapters/hydraHttp.ts"]
+  package__ankhorage_graph_hydradb -.-> module_src_features_graphPersistence_adapters_hydraHttp_ts
+  module_src_features_graphPersistence_adapters_hydraHttp_ts --> module_src_types_config_ts
+  module_src_features_graphPersistence_composition_createHydraDbGraphPersistence_ts["src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"]
+  package__ankhorage_graph_hydradb -.-> module_src_features_graphPersistence_composition_createHydraDbGraphPersistence_ts
+  module_src_features_graphPersistence_composition_createHydraDbGraphPersistence_ts --> module_src_features_graphPersistence_adapters_hydraHttp_ts
+  module_src_features_graphPersistence_composition_createHydraDbGraphPersistence_ts --> module_src_types_config_ts
+  module_src_graphHydraDb_test_ts["src/graphHydraDb.test.ts"]
+  package__ankhorage_graph_hydradb -.-> module_src_graphHydraDb_test_ts
+  module_src_graphHydraDb_test_ts --> module_src_graphHydraDb_ts
+  module_src_graphHydraDb_ts["src/graphHydraDb.ts"]
+  module_src_types_config_ts["src/types/config.ts"]
+  package__ankhorage_graph_hydradb -.-> module_src_types_config_ts

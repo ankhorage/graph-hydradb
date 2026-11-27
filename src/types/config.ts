@@ -1,4 +1,9 @@
-/*** Configuration for the server-side HydraDB HTTP persistence adapter. @config @readme @title HydraDB graph persistence configuration */
+/***
+ * Configuration for the server-side HydraDB HTTP persistence adapter.
+ * @config
+ * @readme
+ * @title HydraDB graph persistence configuration
+ */
 export interface HydraDbGraphPersistenceConfiguration {
   readonly endpoint: string;
   readonly token: string;
