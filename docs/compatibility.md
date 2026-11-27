@@ -2,6 +2,8 @@
 
 Target: HydraDB `v0.5.0` (release published 2026-11-20). Evidence below is from its published `USING-HYDRADB.md` and `cypher-compat.md`; real-container acceptance remains pending.
 
+Real acceptance: passed on 2026-11-27 using `ghcr.io/hydra-db/hydradb@sha256:6edb164cfe06015443bbc67003c68ee5e04e42b2d4f088779867ff1654b9bc0b` (upstream `v0.5.0`, commit `58390740c6d7`). A node seeded with native scalar properties plus the explicit Ankhorage metadata mapping was retrieved through the published adapter, then retrieved unchanged after `docker restart`.
+
 | Contract area                                        | Status                                                   | Evidence / consequence                                                                                                                                         |
 | ---------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | HTTP transport, bearer token, namespace, graph, cell | implemented                                              | Documented `POST /v1/graphs/{graph_id}/query`, bearer token, `X-Graph-Namespace`, and mandatory `cell_id`.                                                     |

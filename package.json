@@ -9,8 +9,16 @@
     "url": "git+https://github.com/ankhorage/graph-hydradb.git"
   },
   "homepage": "https://github.com/ankhorage/graph-hydradb#readme",
-  "bugs": { "url": "https://github.com/ankhorage/graph-hydradb/issues" },
-  "keywords": ["ankhorage", "graph", "hydradb", "persistence", "adapter"],
+  "bugs": {
+    "url": "https://github.com/ankhorage/graph-hydradb/issues"
+  },
+  "keywords": [
+    "ankhorage",
+    "graph",
+    "hydradb",
+    "persistence",
+    "adapter"
+  ],
   "sideEffects": false,
   "files": [
     "dist",
