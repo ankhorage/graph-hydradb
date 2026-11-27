@@ -1,0 +1,112 @@
+[
+  {
+    "name": "createHydraDbGraphPersistence",
+    "title": null,
+    "description": "Create a server-side HydraDB adapter for the canonical Graph persistence boundary.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "function",
+    "modulePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+    "sourceLocation": {
+      "filePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+      "line": 17,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/graphHydraDb.ts"
+    ],
+    "relatedSymbols": [
+      "HydraDbGraphPersistenceConfiguration"
+    ],
+    "signatures": [
+      {
+        "label": "(configuration: HydraDbGraphPersistenceConfiguration) => GraphPersistencePort",
+        "parameters": [
+          {
+            "name": "configuration",
+            "type": "HydraDbGraphPersistenceConfiguration",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "GraphPersistencePort",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "HydraDbGraphPersistenceConfiguration",
+    "title": "HydraDB graph persistence configuration",
+    "description": "Configuration for the server-side HydraDB HTTP persistence adapter.",
+    "isReadme": true,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/config.ts",
+    "sourceLocation": {
+      "filePath": "src/types/config.ts",
+      "line": 7,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/graphHydraDb.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "allowInsecureLoopbackHttp",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "cellId",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "endpoint",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "graphId",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "namespace",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "timeoutMilliseconds",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "token",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  }
+]

@@ -1,0 +1,499 @@
+{
+  "packageName": "@ankhorage/graph-hydradb",
+  "packageId": "@ankhorage/graph-hydradb",
+  "description": "Provides a native HTTP persistence adapter for the canonical Ankhorage graph persistence port.",
+  "purpose": "Translate canonical graph persistence reads into HydraDB HTTP queries without leaking HydraDB transport or credentials into graph consumers.",
+  "productDocumentation": null,
+  "collaborators": true,
+  "donation": {
+    "account": "ankhorage"
+  },
+  "badges": [
+    {
+      "id": "license",
+      "label": "license",
+      "value": "MIT",
+      "color": "2563eb"
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "value": "v0.1.0",
+      "color": "cb3837"
+    },
+    {
+      "id": "runtime",
+      "label": "runtime",
+      "value": "bun",
+      "color": "f59e0b"
+    },
+    {
+      "id": "typescript",
+      "label": "typescript",
+      "value": "strict",
+      "color": "2563eb"
+    },
+    {
+      "id": "eslint",
+      "label": "eslint",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "prettier",
+      "label": "prettier",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "tests",
+      "label": "tests",
+      "value": "configured",
+      "color": "6f42c1"
+    },
+    {
+      "id": "docs",
+      "label": "paradox",
+      "value": "canonical",
+      "color": "0a7f3f"
+    }
+  ],
+  "usage": {
+    "packageName": "@ankhorage/graph-hydradb",
+    "command": null
+  },
+  "usageEntries": [],
+  "exampleCount": 2,
+  "findings": [],
+  "config": {
+    "exportName": "HydraDbGraphPersistenceConfiguration",
+    "title": "HydraDB graph persistence configuration",
+    "description": "Configuration for the server-side HydraDB HTTP persistence adapter.",
+    "isReadme": true,
+    "see": [],
+    "security": [],
+    "members": [
+      {
+        "name": "endpoint",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "token",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "namespace",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "graphId",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "cellId",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "timeoutMilliseconds",
+        "type": "number | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "allowInsecureLoopbackHttp",
+        "type": "boolean | undefined",
+        "required": false,
+        "description": null
+      }
+    ]
+  },
+  "entrypoints": [
+    "src/graphHydraDb.ts"
+  ],
+  "modules": [
+    {
+      "path": "examples/basic-usage/index.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "dist/graphHydraDb.d.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "paradox.config.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "src/features/graphPersistence/adapters/hydraHttp.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/config.ts"
+      ],
+      "exports": [
+        "executeHydraQueryAsync"
+      ]
+    },
+    {
+      "path": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/graphPersistence/adapters/hydraHttp.ts",
+        "src/types/config.ts"
+      ],
+      "exports": [
+        "createHydraDbGraphPersistence"
+      ]
+    },
+    {
+      "path": "src/graphHydraDb.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/graphHydraDb.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/graphHydraDb.ts",
+      "isEntrypoint": true,
+      "dependencies": [],
+      "exports": [
+        "createHydraDbGraphPersistence",
+        "HydraDbGraphPersistenceConfiguration"
+      ]
+    },
+    {
+      "path": "src/types/config.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "HydraDbGraphPersistenceConfiguration"
+      ]
+    }
+  ],
+  "exports": [
+    {
+      "name": "createHydraDbGraphPersistence",
+      "title": null,
+      "description": "Create a server-side HydraDB adapter for the canonical Graph persistence boundary.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "function",
+      "modulePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+      "sourceLocation": {
+        "filePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+        "line": 17,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/graphHydraDb.ts"
+      ],
+      "relatedSymbols": [
+        "HydraDbGraphPersistenceConfiguration"
+      ],
+      "signatures": [
+        {
+          "label": "(configuration: HydraDbGraphPersistenceConfiguration) => GraphPersistencePort",
+          "parameters": [
+            {
+              "name": "configuration",
+              "type": "HydraDbGraphPersistenceConfiguration",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "GraphPersistencePort",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "HydraDbGraphPersistenceConfiguration",
+      "title": "HydraDB graph persistence configuration",
+      "description": "Configuration for the server-side HydraDB HTTP persistence adapter.",
+      "isReadme": true,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/config.ts",
+      "sourceLocation": {
+        "filePath": "src/types/config.ts",
+        "line": 7,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/graphHydraDb.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "allowInsecureLoopbackHttp",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "cellId",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "endpoint",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "graphId",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "namespace",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "timeoutMilliseconds",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "token",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    }
+  ],
+  "components": [],
+  "sourceFunctions": [
+    {
+      "name": "executeHydraQueryAsync",
+      "description": "Execute one bounded, parameterized HydraDB HTTP query and validate its response envelope.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/graphPersistence/adapters/hydraHttp.ts",
+        "line": 15,
+        "column": 1
+      }
+    },
+    {
+      "name": "createQueryUrl",
+      "description": "Construct a secure native HTTP query URL from explicit provider configuration.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/graphPersistence/adapters/hydraHttp.ts",
+        "line": 51,
+        "column": 1
+      }
+    },
+    {
+      "name": "isHydraResponse",
+      "description": "Narrow an untrusted JSON response to HydraDB's documented success envelope.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/graphPersistence/adapters/hydraHttp.ts",
+        "line": 71,
+        "column": 1
+      }
+    },
+    {
+      "name": "createHydraDbGraphPersistence",
+      "description": "Create a server-side HydraDB adapter for the canonical Graph persistence boundary.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+        "line": 17,
+        "column": 1
+      }
+    },
+    {
+      "name": "readNodeAsync",
+      "description": "Read one losslessly mapped canonical node through the documented typed-cell response.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+        "line": 50,
+        "column": 1
+      }
+    }
+  ],
+  "sequenceScenarios": [
+    {
+      "kind": "export",
+      "name": "createHydraDbGraphPersistence",
+      "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+      "symbolName": "createHydraDbGraphPersistence",
+      "description": "Create a server-side HydraDB adapter for the canonical Graph persistence boundary.",
+      "isReadme": false
+    }
+  ],
+  "graphs": {
+    "imports": [
+      {
+        "fromPath": "src/graphHydraDb.test.ts",
+        "toPath": "src/graphHydraDb.ts",
+        "sourcePath": "src/graphHydraDb.test.ts"
+      },
+      {
+        "fromPath": "src/graphHydraDb.ts",
+        "toPath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+        "sourcePath": "src/graphHydraDb.ts"
+      },
+      {
+        "fromPath": "src/graphHydraDb.ts",
+        "toPath": "src/types/config.ts",
+        "sourcePath": "src/graphHydraDb.ts"
+      },
+      {
+        "fromPath": "examples/basic-usage/index.ts",
+        "toPath": "dist/graphHydraDb.d.ts",
+        "sourcePath": "examples/basic-usage/index.ts"
+      },
+      {
+        "fromPath": "src/features/graphPersistence/adapters/hydraHttp.ts",
+        "toPath": "src/types/config.ts",
+        "sourcePath": "src/features/graphPersistence/adapters/hydraHttp.ts"
+      },
+      {
+        "fromPath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+        "toPath": "src/types/config.ts",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      },
+      {
+        "fromPath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+        "toPath": "src/features/graphPersistence/adapters/hydraHttp.ts",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      }
+    ],
+    "calls": [
+      {
+        "fromSymbol": "paradox.config.ts",
+        "toSymbol": "defineParadoxConfig",
+        "callExpression": "defineParadoxConfig",
+        "sourcePath": "paradox.config.ts"
+      },
+      {
+        "fromSymbol": "src/graphHydraDb.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/graphHydraDb.test.ts"
+      },
+      {
+        "fromSymbol": "src/graphHydraDb.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/graphHydraDb.test.ts"
+      },
+      {
+        "fromSymbol": "src/graphHydraDb.test.ts",
+        "toSymbol": "createHydraDbGraphPersistence",
+        "callExpression": "createHydraDbGraphPersistence",
+        "sourcePath": "src/graphHydraDb.test.ts"
+      },
+      {
+        "fromSymbol": "src/graphHydraDb.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/graphHydraDb.test.ts"
+      },
+      {
+        "fromSymbol": "examples/basic-usage/index.ts",
+        "toSymbol": "createHydraDbGraphPersistence",
+        "callExpression": "createHydraDbGraphPersistence",
+        "sourcePath": "examples/basic-usage/index.ts"
+      },
+      {
+        "fromSymbol": "executeHydraQueryAsync",
+        "toSymbol": "createQueryUrl",
+        "callExpression": "createQueryUrl",
+        "sourcePath": "src/features/graphPersistence/adapters/hydraHttp.ts"
+      },
+      {
+        "fromSymbol": "executeHydraQueryAsync",
+        "toSymbol": "isHydraResponse",
+        "callExpression": "isHydraResponse",
+        "sourcePath": "src/features/graphPersistence/adapters/hydraHttp.ts"
+      },
+      {
+        "fromSymbol": "executeAsync",
+        "toSymbol": "assertGraphPersistenceOperation",
+        "callExpression": "assertGraphPersistenceOperation",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      },
+      {
+        "fromSymbol": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts",
+        "toSymbol": "readNodeAsync",
+        "callExpression": "readNodeAsync",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      },
+      {
+        "fromSymbol": "readNodeAsync",
+        "toSymbol": "executeHydraQueryAsync",
+        "callExpression": "executeHydraQueryAsync",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      },
+      {
+        "fromSymbol": "readNodeAsync",
+        "toSymbol": "assertGraphStorageData",
+        "callExpression": "assertGraphStorageData",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      }
+    ],
+    "typeReferences": [
+      {
+        "fromSymbol": "createHydraDbGraphPersistence",
+        "toType": "GraphPersistencePort",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      },
+      {
+        "fromSymbol": "createHydraDbGraphPersistence",
+        "toType": "HydraDbGraphPersistenceConfiguration",
+        "sourcePath": "src/features/graphPersistence/composition/createHydraDbGraphPersistence.ts"
+      }
+    ],
+    "componentComposition": []
+  }
+}

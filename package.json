@@ -1,0 +1,69 @@
+{
+  "name": "@ankhorage/graph-hydradb",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Native HydraDB HTTP persistence adapter for the canonical Ankhorage graph port.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankhorage/graph-hydradb.git"
+  },
+  "homepage": "https://github.com/ankhorage/graph-hydradb#readme",
+  "bugs": {
+    "url": "https://github.com/ankhorage/graph-hydradb/issues"
+  },
+  "keywords": [
+    "ankhorage",
+    "graph",
+    "hydradb",
+    "persistence",
+    "adapter"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "LICENSE",
+    "examples"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/graphHydraDb.d.ts",
+      "import": "./dist/graphHydraDb.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "main": "./dist/graphHydraDb.js",
+  "types": "./dist/graphHydraDb.d.ts",
+  "scripts": {
+    "lint": "ankhorage-eslint . --max-warnings=0",
+    "lint:fix": "ankhorage-eslint . --fix --max-warnings=0",
+    "format": "ankhorage-prettier --write .",
+    "format:check": "ankhorage-prettier --check .",
+    "knip:check": "ankhorage-knip",
+    "build": "rm -rf dist tsconfig.tsbuildinfo && bun x tsc -p tsconfig.build.json",
+    "typecheck": "bun x tsc --noEmit -p tsconfig.json",
+    "check-types": "bun x tsc --noEmit -p tsconfig.json",
+    "test": "bun test src",
+    "docs": "paradox",
+    "changeset": "ankhorage-changeset",
+    "changeset:status": "ankhorage-changeset status --since=origin/main",
+    "version-packages": "ankhorage-changeset version"
+  },
+  "dependencies": {
+    "@ankhorage/graph": "^0.4.0"
+  },
+  "devDependencies": {
+    "@ankhorage/devtools": "^2.12.2",
+    "@ankhorage/paradox": "^0.6.1",
+    "@types/bun": "^1.4.5",
+    "@types/node": "^25.6.0",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "bun@1.4.2"
+}
