@@ -4,9 +4,39 @@
 
 ## Repository
 
-Package: `Package name not declared`
+Package: `@ankhorage/graph-hydradb`
 
-No package description is declared.
+Title: Ankhorage Graph HydraDB
+
+Provides a native HTTP persistence adapter for the canonical Ankhorage graph persistence port.
+
+Purpose: Translate canonical graph persistence reads into HydraDB HTTP queries without leaking HydraDB transport or credentials into graph consumers.
+
+Audience:
+
+- Server-side applications selecting HydraDB for canonical graph reads.
+
+## Scope and boundaries
+
+Responsibilities:
+
+- Open canonical graph persistence sessions.
+- Execute supported node lookup operations through HydraDB's native HTTP API.
+- Expose truthful capability discovery for unsupported provider behavior.
+
+Boundaries:
+
+- Does not define graph persistence contracts or graph algorithms.
+- Does not expose HydraDB mutation behavior as atomic canonical mutations.
+- Does not read environment variables or persist credentials.
+
+Architecture role: Outbound provider adapter implementing the published @ankhorage/graph/persistence boundary.
+
+Architectural invariants:
+
+- Transport remains private behind the public factory.
+- Credentials are explicit configuration inputs.
+- Unsupported operations return the canonical unsupported result before provider writes.
 
 ## Task authority and scope
 
@@ -216,6 +246,7 @@ Read-only reviews report findings without creating commits.
 Run applicable mandatory validation:
 
 - `bun run build`
+- `bun run check-types`
 - `bun run lint`
 - `bun run knip:check`
 - Relevant unit tests and existing mandatory tests
